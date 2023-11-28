@@ -100,10 +100,10 @@ body {
   margin: 0;
 }
 header { 
-	background-image: url(./res/tech-home.png);
+	background-image: url(https://c43-sar.github.io/res/tech-home.png);
 	padding-top: 61.73333333%;
 	background-repeat: no-repeat;
-	background-size: cover;
+	background-size: contain;
   font-family: 'IBM Plex Sans';
   overflow: hidden;
 }
@@ -111,7 +111,9 @@ header img {
 	position: absolute;
 	top: 0;
 	right: 0;
-	width: 45.8%;
+  height: 100%;
+	/* width: 45.8%; */
+  width: 44.62%;
 }
 header h1 { 
 	position: fixed;
@@ -127,9 +129,9 @@ header h1 span {
   font-size: 8.75vw;
 }
 main { 
-  background: #fff;
+  /* background: #fff; */
   position: relative;
-  border: 1px solid #fff;
+  /* border: 1px solid #fff; */
   font-family: 'IBM Plex Sans';
   font-size: 1.4rem;
   padding: 2rem 25%;
