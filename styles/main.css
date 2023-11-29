@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=IBM+Plex+Serif&family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=IBM+Plex+Mono&family=JetBrains+Mono&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=IBM+Plex+Serif&family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Nova+Square&family=Saira+Semi+Condensed&display=swap');
 
 body {
   font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
@@ -101,47 +101,51 @@ body {
 body {
   margin: 0;
 }
-header { 
-	background-image: url(https://c43-sar.github.io/res/tech-home.png);
-	/* padding-top: 61.73333333%; */
+header {
+  background-image: url(https://c43-sar.github.io/res/mtn-bg.png);
   padding-top: 61.73333333%;
-	background-repeat: no-repeat;
-	background-size: cover;
-  font-family: 'IBM Plex Mono';
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: "Saira Semi Condensed";
   overflow: hidden;
   padding-bottom: 0;
 }
 header img {
-	position: absolute;
-	top: 0;
-	right: 0;
-  height: 100%;
-  padding-bottom: 0;
-	/* width: 45.8%; */
-  width: 44.62%;
+  position: absolute;
+  top: 0;
+  /* bottom: 0; */
+  right: 0;
+  /* height: 100%; */
+  /* padding-bottom: 0; */
+  /* width: 45.8%; */
+  /* width: 44.62%; */
 }
-header h1 { 
-	position: fixed;
-	top: 4rem;
-	right: 6rem;
-  font-size: 4.5vw;
-  line-height: .8;
+header h1 {
+  position: fixed;
+  top: 8rem;
+  right: 7rem;
+  font-size: 5vw;
+  line-height: 0.8;
   margin-top: 0;
   text-align: center;
 }
 header h1 span {
   display: block;
-  font-size: 8vw;
+  font-size: 10vw;
 }
-main { 
+main {
   background: #313131;
   position: relative;
   border: 1px solid #313131;
-  font-family: 'IBM Plex Sans';
+  /* font-family: 'IBM Plex Sans'; */
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   font-size: 1.4rem;
   padding: 2rem 25%;
   line-height: 1.6;
 }
 @media all and (max-width: 400px) {
-  main { padding: 2rem; }
+  main {
+    padding: 2rem;
+  }
 }
