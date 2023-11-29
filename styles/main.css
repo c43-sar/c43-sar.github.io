@@ -1,10 +1,15 @@
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=IBM+Plex+Serif&family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Nova+Square&family=Saira+Semi+Condensed&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=IBM+Plex+Serif&family=Nova+Square&family=Saira+Semi+Condensed&display=swap');
+
+@supports (font-variation-settings: normal) {
+  :root { font-family: InterVariable, sans-serif; }
+}
 
 body {
   font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
     Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   font-weight: 400;
   margin: 0;
+  font-feature-settings: 'liga' 1, 'calt' 1; /* fix for Chrome */
   /* display: grid;
   grid-template-areas:
     "navbar"
@@ -95,6 +100,17 @@ body {
     -30px 30px 0px #00bdbd;
 } */
 
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes fadeOut {
+  0% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+
 .temp {
   box-sizing: border-box;
 }
@@ -122,13 +138,29 @@ header img {
 }
 header h1 {
   position: fixed;
-  top: 8rem;
-  right: 7rem;
+  top: 1.5em;
+  right: 8vw;
   font-size: 5vw;
   line-height: 0.9;
   margin-top: 0;
+  /* opacity: 0; */
   text-align: center;
+  animation: fadeIn 3s;
+  animation-delay: 2s;
+  -moz-animation: fadeIn 5s;
+  -moz-animation-delay: 2s;
+  -o-animation: fadeIn 5s;
+  -o-animation-delay: 2s;
+  -webkit-animation: fadeIn 5s;
+  -webkit-animation-delay: 2s;
 }
+
+/* header h1:active {
+  animation: fadeIn 5s;
+  -moz-animation: fadeIn 5s;
+  -o-animation: fadeIn 5s;
+  -webkit-animation: fadeIn 5s;
+} */
 header h1 span {
   display: block;
   font-size: 14vw;
@@ -141,9 +173,25 @@ main {
   font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
     Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   font-size: 1.4rem;
-  padding: 2rem 25%;
+  padding: 1.5rem 12.5%;
   line-height: 1.6;
 }
+
+main a {
+  color: lightblue;
+}
+
+@keyframes reveal {
+  from { opacity: 0; clip-path: inset(0% 90% 0% 0%); }
+  to { opacity: 1; clip-path: inset(0% 0% 0% 0%); }
+}
+
+main h1 {
+  animation: auto linear reveal both;
+  animation-timeline: view();
+  animation-range: entry 25% cover 50%;
+}
+
 @media all and (max-width: 400px) {
   main {
     padding: 2rem;
