@@ -102,7 +102,7 @@ body {
   margin: 0;
 }
 header {
-  background-image: url(https://c43-sar.github.io/res/mtn.png);
+  background-image: url(https://c43-sar.github.io/res/neom-uqAUg1zvMXQ-unsplash.jpg);
   padding-top: 61.73333333%;
   background-repeat: no-repeat;
   background-size: cover;
@@ -122,16 +122,16 @@ header img {
 }
 header h1 {
   position: fixed;
-  top: 4rem;
+  top: 8rem;
   right: 7rem;
   font-size: 5vw;
-  line-height: 0.8;
+  line-height: 0.9;
   margin-top: 0;
   text-align: center;
 }
 header h1 span {
   display: block;
-  font-size: 10vw;
+  font-size: 14vw;
 }
 main {
   background: #313131;
