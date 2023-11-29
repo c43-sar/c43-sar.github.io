@@ -1,7 +1,44 @@
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=IBM+Plex+Serif&family=Nova+Square&family=Saira+Semi+Condensed&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=IBM+Plex+Serif&family=Nova+Square&family=Saira+Semi+Condensed&display=swap");
 
 @supports (font-variation-settings: normal) {
-  :root { font-family: InterVariable, sans-serif; }
+  :root {
+    font-family: InterVariable, sans-serif;
+  }
+}
+
+@media all and (max-width: 400px) {
+  main {
+    padding: 2rem;
+  }
+}
+
+@keyframes reveal {
+  from {
+    opacity: 0;
+    clip-path: inset(0% 90% 0% 0%);
+  }
+  to {
+    opacity: 1;
+    clip-path: inset(0% 0% 0% 0%);
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 
 body {
@@ -9,19 +46,10 @@ body {
     Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   font-weight: 400;
   margin: 0;
-  font-feature-settings: 'liga' 1, 'calt' 1; /* fix for Chrome */
-  /* display: grid;
-  grid-template-areas:
-    "navbar"
-    "main";
-  grid-template-rows: 50px 5fr;
-  grid-auto-rows: 1fr;
-  grid-auto-columns: 1fr;
-  height: 100vh;
-  gap: 0px 20px; */
-  /* background-color: rgb(60, 60, 60); */
+  font-feature-settings: "liga" 1, "calt" 1; /* fix for Chrome */
   background: #313131;
   color: #efefef;
+  margin: 0;
 }
 
 .navbar {
@@ -52,19 +80,7 @@ body {
   text-decoration: none; /* Remove underline */
   height: 100%;
 }
-/*   
-  .navbar img {
-    width: 50px; /* Set the width of the logo 
-    height: 50px; /* Set the height of the logo 
-    margin: 15px; /* Add some margin to the logo 
-    /* height: 100px; /* Set the height of the logo 
-    vertical-align: middle; /* Align the logo vertically with the text 
-    /*width: max(100px, 18vw); /* Set the width of the logo 
-    background-color: beige;
-    aspect-ratio: 35 / 4;
-    padding: 0.2rem;
-  }
-*/
+
 /* Style the navbar links */
 .links {
   display: inline-block; /* Display the links inline */
@@ -83,40 +99,11 @@ body {
   /* font-weight: 500; */
   border-radius: 8px;
 }
-/* 
-.links {
-  margin-right: 15px;
-} */
-
-/* .main {
-  padding-top: 10px;
-}
-
-.main h1 {
-    font-size: 80pt;
-    background-color: aqua;
-  text-align: center;
-  text-shadow: -10px 10px 0px #00e6e6, -20px 20px 0px #01cccc,
-    -30px 30px 0px #00bdbd;
-} */
-
-@keyframes fadeIn {
-  0% { opacity: 0; }
-  100% { opacity: 1; }
-}
-
-@keyframes fadeOut {
-  0% { opacity: 1; }
-  100% { opacity: 0; }
-}
-
 
 .temp {
   box-sizing: border-box;
 }
-body {
-  margin: 0;
-}
+
 header {
   background-image: url(https://c43-sar.github.io/res/neom-uqAUg1zvMXQ-unsplash.jpg);
   padding-top: 61.73333333%;
@@ -126,6 +113,7 @@ header {
   overflow: hidden;
   padding-bottom: 0;
 }
+
 header img {
   position: absolute;
   top: 0;
@@ -136,6 +124,7 @@ header img {
   /* width: 45.8%; */
   width: 43.438%;
 }
+
 header h1 {
   position: fixed;
   top: 1.5em;
@@ -145,14 +134,16 @@ header h1 {
   margin-top: 0;
   /* opacity: 0; */
   text-align: center;
-  animation: fadeIn 3s;
-  animation-delay: 2s;
-  -moz-animation: fadeIn 5s;
-  -moz-animation-delay: 2s;
-  -o-animation: fadeIn 5s;
-  -o-animation-delay: 2s;
-  -webkit-animation: fadeIn 5s;
-  -webkit-animation-delay: 2s;
+  animation: auto linear fadeOut both;
+  animation-timeline: view();
+  animation-range: exit 0% exit 100%;
+  /* animation-delay: 2s; */
+  /* -moz-animation: fadeOut; */
+  /* -moz-animation-delay: 2s; */
+  /* -o-animation: fadeOut; */
+  /* -o-animation-delay: 2s; */
+  /* -webkit-animation: fadeOut; */
+  /* -webkit-animation-delay: 2s; */
 }
 
 /* header h1:active {
@@ -161,10 +152,12 @@ header h1 {
   -o-animation: fadeIn 5s;
   -webkit-animation: fadeIn 5s;
 } */
+
 header h1 span {
   display: block;
   font-size: 14vw;
 }
+
 main {
   background: #313131;
   position: relative;
@@ -177,13 +170,16 @@ main {
   line-height: 1.6;
 }
 
+main p {
+  text-align: justify;
+}
+
 main a {
   color: lightblue;
 }
 
-@keyframes reveal {
-  from { opacity: 0; clip-path: inset(0% 90% 0% 0%); }
-  to { opacity: 1; clip-path: inset(0% 0% 0% 0%); }
+main a:visited {
+  color: lightslategray;
 }
 
 main h1 {
@@ -192,8 +188,8 @@ main h1 {
   animation-range: entry 25% cover 50%;
 }
 
-@media all and (max-width: 400px) {
-  main {
-    padding: 2rem;
-  }
+footer {
+  font-size: smaller;
+  font-weight: 300;
+  text-align: center;
 }
