@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=IBM+Plex+Serif&family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Saira+Semi+Condensed&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=IBM+Plex+Serif&family=Saira+Semi+Condensed&display=swap");
 
 @supports (font-variation-settings: normal) {
   :root {
@@ -43,9 +43,18 @@ html {
   /* overflow-x: hidden; */
 }
 
+@keyframes navAnim {
+  from {
+    backdrop-filter: blur(1px);
+  } to {
+    backdrop-filter: blur(1vw);
+  }
+}
+
 .navbar {
   z-index: 7;
-  background-color: #333; /* Dark background color */
+  /* background-color: #333; */
+  /* Dark background color */
   /*padding: 20px; /* Add some padding */
   height: 50px; /* Set the height of the navbar */
   width: 100%; /* Set the width of the navbar */
@@ -55,6 +64,12 @@ html {
   display: flex; /* Use flexbox to align the items */
   align-items: center; /* Center the items vertically */
   justify-content: space-around; /* Distribute the items evenly */
+  view-timeline-name: --header;
+  view-timeline-axis: block;
+  animation: auto linear navAnim both;
+  /* animation-timeline: view(); */
+  animation-timeline: --header;
+  animation-range: exit 0% exit 100%;
 }
 
 /* Style the navbar title */
@@ -154,8 +169,8 @@ main {
   position: relative;
   border: 1px solid #313131;
   /* font-family: 'IBM Plex Sans'; */
-  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-    Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  /* font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif; */
   font-size: 1.4rem;
   padding: 1.5rem 12.5%;
   line-height: 1.6;
@@ -197,12 +212,13 @@ main a:visited {
 }
 
 footer {
+  font-family: "IBM Plex Sans", system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   font-size: smaller;
   font-weight: 300;
   text-align: center;
 }
 
-/* Contact-list inspired in&out animation*/
+/* Contact-list inspired in&out animation */
 /* https://developer.chrome.com/articles/scroll-driven-animations/ */
 
 @keyframes animate-in-and-out {
@@ -749,6 +765,7 @@ main * {
     content: "​";
   }
 }
+
 @keyframes beam-blink {
   75% {
     border-color: transparent;
@@ -761,7 +778,7 @@ main * {
   display: inline;
   animation: auto linear fadeIn both;
   animation-timeline: view();
-  animation-range: entry 25% cover 50%;
+  animation-range: cover 25% contain 30%;
 }
 
 .typeAnim {
@@ -784,6 +801,7 @@ main * {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
 .typeAnim::after {
   content: "​";
   position: relative;
@@ -797,6 +815,7 @@ main * {
   white-space: nowrap;
   animation: typed 21.36s linear 1s infinite, beam-blink 1s infinite;
 }
+
 .typeAnimContainer {
   @media (max-width: 575px) {
     .typeAnim::after {
@@ -804,6 +823,7 @@ main * {
     }
   }
 }
+
 /* .typeAnim::before {
   content: "4 strings / 52 chars / 21.36s duration";
   display: block;
