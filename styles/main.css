@@ -45,10 +45,10 @@ html {
 
 @keyframes navAnim {
   from {
-    backdrop-filter: blur(1px);
+    backdrop-filter: blur(0px);
   }
   to {
-    backdrop-filter: blur(1vw);
+    backdrop-filter: blur(1vh);
   }
 }
 
@@ -71,6 +71,11 @@ html {
   /* animation-timeline: view(); */
   animation-timeline: --header;
   animation-range: exit 0% exit 100%;
+}
+
+nav * {
+  opacity: 0;
+  animation: fadeIn 1s ease-in 0s 1 normal forwards;
 }
 
 /* Style the navbar title */
