@@ -73,9 +73,9 @@ html {
   animation-range: exit 0% exit 100%;
 }
 
-nav * {
+.logo-container,.links {
   opacity: 0;
-  animation: fadeIn 1s ease-in 0s 1 normal forwards;
+  animation: fadeIn 0.7s ease-in-out 1.5s 1 normal forwards;
 }
 
 /* Style the navbar title */
@@ -84,7 +84,7 @@ nav * {
   color: #efefef;
   /*font-size: min(5vw, 1.2em);*/
   font-size: large;
-  text-align: center;
+  text-align: left;
   font-weight: 600;
 }
 
@@ -97,6 +97,7 @@ nav * {
 .links {
   display: inline-block; /* Display the links inline */
   color: #efefef; /* White text color */
+  background: none;
   padding: 8px;
   /* overflow: hidden;  */
   text-decoration: none; /* Remove underline  */
